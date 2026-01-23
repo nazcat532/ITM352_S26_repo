@@ -1,5 +1,5 @@
 #Ask the user to enter a floating point number. Square the number
-# Print out the orignal number and the squared result 
+# Print out the original number and the squared result 
 # Name: Nazca
 # Date: 2026-01-22
 
@@ -10,6 +10,8 @@ squared_value = float(input_value) ** 2
 # Round te number to 2 decimal places
 squared_value = round(squared_value, 2)
 
-printI("You entered:", float_value)
+print("You entered:", float(input_value))
 print("The squared value is:", squared_value)
 
+# Display a welcome message to the user
+print("Welcome to the Program!")
