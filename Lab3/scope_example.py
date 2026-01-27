@@ -6,7 +6,7 @@ def calculate_discounted_price(price):
     #global discount 
     discount = 0.9
     price = price * discount
-    price(f"Inside function, discounted price: {price:.2f}")
+    print(f"Inside function, discounted price: {price:.2f}")
     return price
 
 discount = 0.6

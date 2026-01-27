@@ -1,7 +1,7 @@
 #Create a function called midpoint
 
 def midpoint(num1, num2):
-    ***Calculate the midpoint between two numbers***
+    """Calculate the midpoint between two numbers"""
     mid = (num1 + num2) / 2
     return mid
 
