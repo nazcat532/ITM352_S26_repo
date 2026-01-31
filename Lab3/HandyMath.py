@@ -27,3 +27,9 @@ def min(num1, num2):
     # Return the minimum of two numbers
     return num1 if num1 < num2 else num2
 
+def log2(number):
+    """Calculate the base-2 logarithm of a number"""
+    import math
+    if number <= 0:
+        return None
+    return math.log2(number)
