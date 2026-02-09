@@ -8,5 +8,5 @@ TaxTrips = {
 
 print(TaxTrips)
 
-print(f"The third trip waas {TaxTrips['miles'][2]} miles long.")
+print(f"The third trip was {TaxTrips['miles'][2]} miles long.")
 print(f"The fare for the third trip was ${TaxTrips['fares'][2]}.")

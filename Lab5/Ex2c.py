@@ -9,7 +9,7 @@ trips = [
 	{'duration': 2.6, 'fare': 8.05},
 ]
 print("List of trip dictionaries:")
-print(trips_list)
+print(trips)
 
 #trips = dict(zip(trip_duration, trip_fares))
 #print ("\nTrips dictionary:")
