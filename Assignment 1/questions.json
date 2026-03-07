@@ -1,0 +1,7 @@
+{
+    "What is the color of the sky": ["blue", "red", "green", "yellow"],
+    "What is the city of Oahu": ["Honolulu", "Ala Moana", "Kailua", "Kahala"],
+    "Barak Obama was elected in which year?": ["2008", "2012", "2016", "2020"],
+    "Which continent is the largest?": ["Asia", "Africa", "North America", "South America"],
+    "Which country is known for the Eiffel Tower?": ["France", "Germany", "Italy", "Spain"]
+}
