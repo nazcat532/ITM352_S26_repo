@@ -55,7 +55,7 @@ for question, options in questions.items():
     
     #50/50
     if not fifty_fifty_used:
-        use_fifty_fifty_input = input("Would you like to use 50/50? (y/n): ").lower()
+        use_fifty_fifty_input = input("Would you like to use 50/50? (yes/no): ").lower()
         if use_fifty_fifty_input == 'y':
             # Convert letter answer to index (a=0, b=1, c=2, d=3)
             correct_index = ord(answers[question]) - ord('a')
