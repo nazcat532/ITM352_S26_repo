@@ -18,6 +18,7 @@ for question, options in QUESTIONS.items():
         print(f" {label}. {alternative}")
     
     answer_label = int(input(question + ": "))
+    answer = sorted_options[answer_label - 1]
     if answer == correct_answer:
         print("Correct!")
     else:
