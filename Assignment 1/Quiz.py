@@ -57,8 +57,9 @@ for question, options in questions.items():
     if not fifty_fifty_used:
         use_fifty_fifty_input = input("Would you like to use 50/50? (y/n): ").lower()
         if use_fifty_fifty_input == 'y':
-            correct_indices = [i for i, opt in enumerate(options) if opt == answers[question]]
-            options = use_fifty_fifty(options, correct_indices)
+            # Convert letter answer to index (a=0, b=1, c=2, d=3)
+            correct_index = ord(answers[question]) - ord('a')
+            options = use_fifty_fifty(options, [correct_index])
             fifty_fifty_used = True
             print("\nOptions after using 50/50:")
             for label, option in zip(options_labels, options):
