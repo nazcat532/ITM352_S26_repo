@@ -1,3 +1,7 @@
+# Application supported with Gemini (AI)
+# AI assisted code for a sales data dashboard with pivot table analytics and history tracking.
+# Those suggestions were reviewed and similfied by the student to meet the requirements of the assignment and to ensure clarity and maintainability.
+
 import pandas as pd
 import time
 import os
