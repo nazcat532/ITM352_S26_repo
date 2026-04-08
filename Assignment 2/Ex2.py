@@ -17,6 +17,8 @@ def load_csv(filepath):
         end_time = time.time()
         load_time = end_time - start_time
         print(f"CSV file loaded successfully in {load_time:.2f} seconds.")
+        print(f"number of rows: {len(df)}")
+        print(f"number of columns: {len(df.columns)}")
     except Exception as e:
         print(f"Error loading CSV file: {e}")
         return None
