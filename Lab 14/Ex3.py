@@ -1,31 +1,32 @@
-import json
+# Create a chart of tips by payment type
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
-# Load the trip data from the JSON file
-with open('Trips from area 8.json', 'r') as file:
-    trips_data = json.load(file)
+# Read in the data from the JSON file
+trips_df = pd.read_json("Trips from area 8.json")
 
-# Convert to DataFrame
-df = pd.DataFrame(trips_data)
+# Extract the tips and payment type data
+trips_df = trips_df[["tips", "payment_method"]]
 
-# Drop rows with NA/null values in the tips column
-df = df.dropna(subset=['tips'])
+# Clean up the data
+trips_df = trips_df.dropna()
+trips_df = trips_df.astype({'tips': float})
+trips_df = trips_df.set_index("payment_method")
 
-# Group by payment method and sum the tips
-tips_by_payment = df.groupby('payment_method')['tips'].sum()
+# Sum the tips by payment type
+tips_by_payment = trips_df.groupby("payment_method").sum()
 
-# Create the histogram/bar chart
-plt.figure(figsize=(10, 6))
-bars = plt.bar(tips_by_payment.index, tips_by_payment.values, color='coral', edgecolor='black', alpha=0.7)
+x_labels = pd.Series(tips_by_payment.index.values)
+y_values = pd.Series(tips_by_payment["tips"].values)
 
-# Add title and axis labels
-plt.title('Total Tips by Payment Method - Area 8', fontsize=14, fontweight='bold')
-plt.xlabel('Payment Method', fontsize=12)
-plt.ylabel('Sum of Tips', fontsize=12)
+bars = np.array(range(len(x_labels)))
+plt.xticks(bars, x_labels, color='red',fontweight='bold')
 
-# Add grid
-plt.grid(True, axis='y', alpha=0.3)
+# Create a bar chart of the tips by payment type
+plt.bar(bars, y_values)
+plt.title("TaxiTips by Payment Type")
+plt.xlabel("Payment Type")
+plt.ylabel("Total Tips in $")
 
-# Display the plot
 plt.show()

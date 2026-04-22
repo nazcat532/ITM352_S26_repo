@@ -1,35 +1,20 @@
+# Visualize two sets of x and y values as scatter plots and line graphs
 import matplotlib.pyplot as plt
 
-# First set of data
-x1 = [1, 2, 3, 4, 5]
-y1 = [2, 4, 6, 8, 10]
+x_values = [1, 2, 3, 4, 5]
+y_values = [1, 3, 3, 3.5, 4]
 
-# Second set of data
-x2 = [1, 2, 3, 4, 5]
-y2 = [1, 3, 5, 7, 9]
+# Plot these values as a scatter plot and a line graph
+plt.plot(x_values, y_values)
+plt.scatter(x_values, y_values, color='red')
 
-# Create the plot
-plt.figure(figsize=(10, 6))
+# Now add in a second set of x,y values
+other_x = [1, 2, 3, 4]
+other_y = [2, 4, 6, 8]
 
-# Plot first set as line graph
-plt.plot(x1, y1, label='Line 1', color='blue', linewidth=2)
+plt.plot(other_x, other_y)
+plt.xlabel("X Values")
+plt.ylabel("Y Values")  
+plt.title("Line and Scatter Plot")
 
-# Plot first set as scatter plot
-plt.scatter(x1, y1, label='Scatter 1', color='red', s=100, alpha=0.6)
-
-# Plot second set as line graph
-plt.plot(x2, y2, label='Line 2', color='green', linewidth=2)
-
-# Add title and axis labels
-plt.title('Simple Data Visualization', fontsize=14, fontweight='bold')
-plt.xlabel('X Values', fontsize=12)
-plt.ylabel('Y Values', fontsize=12)
-
-# Add legend
-plt.legend()
-
-# Add grid
-plt.grid(True, alpha=0.3)
-
-# Display the plot
 plt.show()

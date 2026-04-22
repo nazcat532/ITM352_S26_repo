@@ -1,24 +1,18 @@
-import json
+# Create a histogram from the trip miles data
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# Load the trip data from the JSON file
-with open('Trips from area 8.json', 'r') as file:
-    trips_data = json.load(file)
+# Read in the data from the JSON file
+trips_df = pd.read_json("Trips from area 8.json")
+# Extract the trip miles data
+trip_miles_series = trips_df["miles"]
 
-# Extract trip miles
-trip_miles = [trip['miles'] for trip in trips_data]
+fig = plt.figure()
 
-# Create the histogram
-plt.figure(figsize=(10, 6))
-plt.hist(trip_miles, bins=10, color='skyblue', edgecolor='black', alpha=0.7)
+# Create a histogram of the trip miles data
+plt.hist(trip_miles_series)
+plt.title("Distribution of Taxi Trip Miles")
+plt.xlabel("Trip Miles")
+plt.ylabel("Frequency")
 
-# Add title and axis labels
-plt.title('Histogram of Trip Miles - Area 8', fontsize=14, fontweight='bold')
-plt.xlabel('Trip Miles', fontsize=12)
-plt.ylabel('Frequency', fontsize=12)
-
-# Add grid
-plt.grid(True, axis='y', alpha=0.3)
-
-# Display the plot
 plt.show()
